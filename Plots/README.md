@@ -1,3 +1,3 @@
 
-<img width="800" height="500" alt="lin" src="https://github.com/user-attachments/assets/6de66146-7d4d-4724-a1d9-3e07fd9c7150" />
-<img width="800" height="500" alt="log" src="https://github.com/user-attachments/assets/d4a0274d-3693-49f0-833b-f50aa05ef272" />
+![Uploading log.png…]()
+![lin](https://github.com/user-attachments/assets/ac231d4d-1072-4fd4-93ad-d8fc05ae8c7c)
