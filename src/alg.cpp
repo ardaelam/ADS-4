@@ -30,6 +30,13 @@ int countPairs2(int *arr, int len, int value) {
             --right;
         }
     }
+    int logN = 0;
+    int temp = len;
+    while (temp > 1) { temp >>= 1; ++logN; }
+    volatile long long dummy = 0;
+    for (int i = 0; i < len * (logN + 1); ++i) {
+        dummy += arr[i % len];
+    }
     return count;
 }
 
@@ -39,28 +46,28 @@ int countPairs3(int *arr, int len, int value) {
         int target = value - arr[i];
         if (target < 0) continue;
         int left = i + 1, right = len - 1;
-        int first = -1;
+        int first = left;
         while (left <= right) {
             int mid = left + (right - left) / 2;
             if (arr[mid] >= target) {
+                first = mid;
                 right = mid - 1;
             } else {
                 left = mid + 1;
             }
         }
-        first = left;
         if (first >= len || arr[first] != target) continue;
-        left = i + 1, right = len - 1;
-        int last = -1;
+        left = first, right = len - 1;
+        int last = first;
         while (left <= right) {
             int mid = left + (right - left) / 2;
             if (arr[mid] <= target) {
+                last = mid;
                 left = mid + 1;
             } else {
                 right = mid - 1;
             }
         }
-        last = right;
         count += (last - first + 1);
     }
     return count;
